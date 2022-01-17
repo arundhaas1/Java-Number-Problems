@@ -23,3 +23,30 @@ public  class Main{
 
 ______________________________________________________________________________________________________________________________________________________________________
 
+              //Using Recursion
+              
+package com.dhas;
+import java.util.Scanner;
+public  class Main{
+    static int revers=0;  //must intialize globally for recursion method, otherwise it won't update and remain as 0.
+    static int lastDigit=0;
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter the number");
+        int number=input.nextInt();
+        
+        System.out.println(reverse(number));
+    }
+    public static int reverse(int temp){
+
+        if(temp>0){
+             int lastDigit = temp % 10;
+             revers=revers*10+lastDigit;
+            reverse(temp/10);
+        }
+        return revers;
+
+    }
+}
+__________________________________________________________________________________________________________________________________________________________________________
+
