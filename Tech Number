@@ -1,0 +1,82 @@
+    //Tech Number
+    //Example ( 2025=>20 + 25 =>45^2=2025 )
+    
+ package com.dhas;
+import java.util.Scanner;
+public  class Main {
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any number...");  //get input number
+        int number = input.nextInt();
+        techNumber(number);
+    }
+
+    public static void techNumber(int number){
+        int temp=number;
+        int length=0;
+        int firstHalf;
+        int lastHalf;
+        while (temp>0){
+          length++;     //to get the length of the number
+          temp/=10;
+      }
+        if(length%2==0){    //if the length is even
+            int divisor=(int) Math.pow(10,length/2);    //to split into equal half
+            firstHalf=number/divisor;   //first half is seperated 
+            lastHalf=number%divisor;    //second half is seperated
+            int sum=firstHalf+lastHalf;   //both are added
+            int square=sum*sum;   //squared 
+            if(square==number){
+                System.out.println("ohh yehh!! the given number is the tech number");
+            }else {
+                System.out.println("sorry the given number is not a tech number");
+            }
+        }else {
+            System.out.println("it is not a tech number");
+        }
+
+    }
+}
+_______________________________________________________________________________________________________________________________________________________________________________
+
+        //between limits
+        
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any number...");
+        int number = input.nextInt();
+        techNumber(number);
+    }
+
+    public static void techNumber(int number){
+        for (int i=1;i<number;i++){   ///all the same as above instide the for loop of the number is replaced as i.
+            int temp=i;
+            int length=0;
+            int firstHalf;
+            int lastHalf;
+            while (temp>0){
+                length++;
+                temp/=10;
+            }
+
+            if(length%2==0) {
+                int divisor = (int) Math.pow(10, length / 2);
+                firstHalf = i / divisor;
+                lastHalf = i % divisor;
+                int sum = firstHalf + lastHalf;
+                int square = sum * sum;
+                if (square == i) {
+                    System.out.println(i);
+                }
+            }
+        }
+    }
+}
+
+____________________________________________________________________________________________________________________________________________________________________________
+        
