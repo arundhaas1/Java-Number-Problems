@@ -1,0 +1,44 @@
+      //Peterson Number
+      
+      //A number is said to be Peterson if the sum of factorials of each digit is equal to the sum of the number itself.
+      
+      //145 = !1 + !4 + !5
+      //=1+4*3*2*1+5*4*3*2*1
+      //=1+24+120
+      //145=145
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static int length = 0;
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any two digit number number...");   //get input number
+        int number = input.nextInt();
+        peterson(number);
+    }
+
+    public static void peterson(int number){
+       int temp=number;
+       int lastDigit;
+       int factorial;
+       int sum=0;
+
+       while (temp>0){
+           lastDigit=temp%10;    //loop to get last digit
+           temp/=10;
+           factorial=lastDigit;
+           for (int i=1;i<lastDigit;i++){     //to get the factorial of the stored last digit
+               factorial=i*factorial;
+           }
+           sum=sum+factorial;     //adding the factorial values of the last numbers
+       }
+        if(sum==number){
+            System.out.println("ohhh yehh!!the given number is the peterson number");
+        }else{
+            System.out.println("it is not the peterson number");
+        }
+    }
+}
+___________________________________________________________________________________________________________________________________________________________________________
