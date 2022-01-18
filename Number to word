@@ -1,1 +1,53 @@
+        //Number to Words (0-999)     for more numbers of digit just add an array and also add another if class
+        
+package com.dhas;
+import java.util.Scanner;
+public  class Main{
+   static int length=0;
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter the number less than three digits...");         //get input
+        int number=input.nextInt();
+        seperator(number);
+    }
 
+    public  static void seperator(int number){
+            int lastNum;
+            int secondNum;
+            int firstNum;
+
+        String[] onedigit = new String[]{"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+        String[] twoDigit = new String[]{"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+        String threeDigit = "Hundred";
+
+        if(number>0 && number<20){
+            System.out.println(onedigit[number]);   //for numbers between 20
+        }
+
+        if(number>19 && number<100){
+            lastNum=number%10;
+            firstNum=number/10;
+
+            System.out.println(twoDigit[firstNum]+" "+onedigit[lastNum]);       //for number between 20 to 100
+        }
+
+        if(number>99 && number<999) {         
+            int lastTWoDigit=number%100;
+
+            if (lastTWoDigit<20){                    
+                lastNum=lastTWoDigit;     //if last two digit of the three digit number is single as 11 to 19  example(512)
+                secondNum=0;
+            }else{
+                lastNum = number % 10;
+                int cutting = number / 10;
+                secondNum = cutting % 10;
+            }
+           firstNum = number / 100;
+
+            System.out.println(onedigit[firstNum]+" "+threeDigit+" "+twoDigit[secondNum]+" "+onedigit[lastNum]);    //for number between 100 to 1000
+
+        }
+    }
+}
+
+_____________________________________________________________________________________________________________________________________________________________________________
