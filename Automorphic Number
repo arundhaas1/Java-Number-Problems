@@ -1,3 +1,38 @@
             //Automorphic Number
             
             //A number is called an automorphic number if and only if the square of the given number ends with the same number itself. For example, 25, 76 are automorphic numbers because their square is 625 and 5776, respectively and the last two digits of the square represent the number itself.
+
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static int length = 0;
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any two digit number number...");     //get number from input
+        int number = input.nextInt();
+        automorphic(number);
+    }
+
+    public static void automorphic(int number) {
+        int square=number*number;
+
+        int lastDigit=square%10;    //to get only last digit of the square of the number
+        int lasttwoDigit=square%100;    //to get last two digits of the square of the number
+       if(number<9){
+           if(lastDigit==number){
+               System.out.println("Yep!!!it is an automorphic number");       //for single digit numbers
+           }
+       }else if(number>9 && number<100){
+           if(lasttwoDigit==number){
+               System.out.println("Yep!!!it is an automorphic number");     //for two digit numbers
+           }else {
+               System.out.println("Sorry!it is not a automorphic number");
+           }
+       }else{
+           System.out.println("enter the number less than 100");
+       }
+
+    }
+}
+________________________________________________________________________________________________________________________________________________________________________
