@@ -1,0 +1,55 @@
+      //Sunny Number
+      
+      //A number is called a sunny number if the number next to the given number is a perfect square. In other words, a number N will be a sunny number if N+1 is a perfect square.
+      // N=80 then N+1 will be 80+1=81, which is a perfect square of the number 9. Hence 80 is a sunny number.
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any two digit number number...");  //get input
+        int number = input.nextInt();
+        sunnyNumber(number);
+    }
+
+    public static void sunnyNumber(int number){
+        double num = Math.pow(number+1,0.5);  //number+1 its square root value
+        double num2=Math.floor(num);     //it is the floor value if the square root is 2.44 it only returns 2 as whole value.
+
+        if(num-num2==0){       //if the both have no differnce then it has no secimal points in the num variable..
+            System.out.println("ohh yehh!! it is an sunny number");
+        }else{
+            System.out.println("sorry it is not a petersn number");
+        }
+
+    }
+}
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+      //Print all sunny numbers between the limits
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any two digit number number...");
+        int number = input.nextInt();
+        sunnyNumber(number);
+    }
+
+    public static void sunnyNumber(int number){
+       for (int i=0;i<number;i++){
+           double num = Math.pow(i+1,0.5);        //same as above but it goes through the for loop()
+           double num2=Math.floor(num);
+           if(num-num2==0) {
+               System.out.println(i);
+           }
+       }
+
+    }
+}
+___________________________________________________________________________________________________________________________________________________________________________
