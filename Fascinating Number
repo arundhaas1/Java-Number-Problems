@@ -11,6 +11,53 @@
     
     //We observe that the resultant () contains all the digits from 1 to 9, exactly once. Hence, the given number 327 is a fascinating number
     
-    ____________________________________________________________-
+    ____________________________________________________________
+    
+    package com.dhas;
+import java.util.Scanner;
+public  class Main {
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any number...");
+        int number = input.nextInt();
+        fascinatingNumber(number);
+    }
+
+    public static void fascinatingNumber(int number){
+       int temp=number;
+        int count=0;    //to check it has all nine numbers between 1 to 9
+
+//        String multiplyOne=Integer.toString(temp*1);
+//        String multiplyTwo=Integer.toString(temp*2);
+//        String multiplyThree=Integer.toString(temp*3);
+//        String multiply=multiplyOne+multiplyTwo+multiplyThree;   //another method of storing the num as string
+//        System.out.println(multiply);
+
+        int n1=(temp*1);
+        int n2=(temp*2);
+        int n3=(temp*3);
+        String multiply=n1+""+n2+n3; //by adding a empty string to make the String data type to consider even int value as a String.
+        System.out.println(multiply);
+
+        for(char i='1';i<='9';i++){                //this loop is to check it has all number
+            for (int j=0;j<multiply.length();j++){    //this loop is to get all char from multiply ang equate withe the i.
+                char data=multiply.charAt(j);
+                if(data==i){
+                    System.out.println(i);
+                    count++;
+                    break;   //to prevent of having same number twice,once it says true it automaticaly break ,so it is not possible  to go through the loop once again with the same i value.
+                }
+            }
+        }
+        if(count==9){                //have all 1-9 numbers
+            System.out.println("yep !!it is an fascinating number");
+        }else {
+            System.out.println("sorry it is not a fascinating number");
+        }
+
+    }
+}
+_____________________________________________________________________________________________________________________________________________________________________
     
     
