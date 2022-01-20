@@ -1,0 +1,64 @@
+      //Neon Number
+      
+      //(9^2=81 =>8+1=9) therefor 9 is an neon number
+_______________________________________________________________
+
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any number...");  //get input
+        int number = input.nextInt();
+        neonNumber(number);
+    }
+
+    public static void neonNumber(int number){
+       int temp=number;   //for temporary usage
+       int square=temp*temp;
+       int sum=0;
+       int lastDigit;
+       while (square>0){
+           lastDigit=square%10;  //to all the digits in the number
+           sum+=lastDigit;
+           square=square/10;   //remove digits after being added
+       }
+        if(number==sum){
+            System.out.println("ohh!!!yeh it is an neon number");
+        }else{
+            System.out.println("sorry it is not a neon number");
+        }
+    }
+}
+______________________________________________________________________________________________________________________________________________________________________________
+
+      //for specific range
+      
+      package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any number...");
+        int number = input.nextInt();
+        neonNumber(number);
+    }
+
+    public static void neonNumber(int number){
+      for (int i=0;i<number;i++){
+          int temp=i;
+          int square=temp*temp;
+          int sum=0;
+          int lastDigit;
+          while (square>0){
+              lastDigit=square%10;
+              sum+=lastDigit;
+              square=square/10;
+          }
+          if(temp==sum) {
+              System.out.println(i);
+          }
+      }
+    }
+}
+_____________________________________________________________________________________________________________________________________________________________
