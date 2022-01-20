@@ -1,0 +1,34 @@
+      //Spy Number
+      
+      //A positive integer is called a spy number if the sum and product of its digits are equal.(1124 => add=8 && multiply=8)
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter any number...");
+        int number = input.nextInt();
+        spyNumber(number);
+    }
+
+    public static void spyNumber(int number){
+        int temp=number;
+          int sum=0;
+          int multiply=1;
+          int lastDigit;
+          while (temp>0){
+              lastDigit=temp%10;   //to get all digits..the last digits are seperated
+              sum+=lastDigit;      //sum of digits
+              multiply*=lastDigit;   //multiply of digits
+              temp=temp/10;   //to remove that last digit after process.
+         }
+          if(sum==multiply){
+              System.out.println("it is an spy number");
+          }else{
+              System.out.println("sorry it is not a spy number");
+          }
+    }
+}
+
+________________________________________________________________________________________________________________________________________________________________________
