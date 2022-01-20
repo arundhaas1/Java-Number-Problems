@@ -1,0 +1,29 @@
+    //buzz Number
+    //Buzz number is another special number in Java that ends with digit 7 or divisible by 7.
+
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter the number");
+        int number=input.nextInt();
+        buzzNumber(number);
+    }
+    public static void buzzNumber(int number){
+        int lastDigit=number%10;
+        boolean divisibleBySeven=false;
+        if(number%7==0){
+            divisibleBySeven=true;
+        }else {
+            divisibleBySeven=false;
+        }
+
+        if(lastDigit==7 || divisibleBySeven==true){
+            System.out.println("ohh yehh !! it is an buzz number");
+        }else{
+            System.out.println("sorry it not an buzz number");
+        }
+    }
+}
+_____________________________________________________________________________________________________________________________________________________________________________
