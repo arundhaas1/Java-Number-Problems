@@ -1,0 +1,48 @@
+        //Duck Number
+        //Duck number is another special positive non-zero number that contains zero in it. The digit zero should not be presented at the starting of the number. Zero can be present at any of the positions except the beginning of the number.
+        
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter the number");
+        int number=input.nextInt();
+        duckNumber(number);
+    }
+    public static void duckNumber(int number){
+       int temp=number;
+        int lastDigit;
+        int length=0;
+        boolean flag=false;
+        while (temp>0){
+            temp/=10;
+            length++;
+        }
+        temp=number;
+        String num=Integer.toString(temp);
+        char firstDigit=num.charAt(0);
+        System.out.println(firstDigit);
+
+        if(firstDigit!='0'){
+            while (temp>0){
+                lastDigit=temp%10;
+                if(lastDigit==0){
+                    flag=true;
+                    break;
+                }else{
+                    temp/=10;
+                }
+            }
+
+            if(flag==true){
+                System.out.println("it is an duck number");
+            }else{
+                System.out.println("it is not an duck number");
+            }
+        }else{
+            System.out.println("it is not an duck number");
+        }
+    }
+}
+______________________________________________________________________________________________________________________________________________________________________________
