@@ -1,0 +1,52 @@
+      //Emirp Number
+      //A number is called an emirp number if we get another prime number on reversing the number itself. (79 is a prime also its reverse 97 also prime.)
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter the number");
+        int number=input.nextInt();
+        emripNumber(number);
+    }
+    public static void emripNumber(int number){
+        int temp=number;
+        boolean numberPrimeOrNot=false;
+        boolean reversePrimeOrNot=false;
+        int reverse=0;
+        int lastdigit;
+
+        while (temp>0){
+            lastdigit=temp%10;
+            reverse=reverse*10+lastdigit;   //to reverse the number
+            temp/=10;
+        }
+
+        for (int i=2;i<number;i++){
+            if(number%i==0){
+                numberPrimeOrNot=false;    //to check wheather the number is prime
+                break;
+            }else{
+                numberPrimeOrNot=true;
+            }
+        }
+
+        for (int i=2;i<reverse;i++){
+            if(reverse%i==0){
+                reversePrimeOrNot=false;    //to check wheather the reverse is prime or not
+                break;
+            }else{
+                reversePrimeOrNot=true;
+            }
+        }
+
+        if(reversePrimeOrNot==true && numberPrimeOrNot==true){
+            System.out.println("it is an emrip number");
+        }else{
+            System.out.println("sorry it is not an emrip number" );
+        }
+
+    }
+}
+______________________________________________________________________________________________________________________________________________________________________
