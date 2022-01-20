@@ -1,1 +1,71 @@
       //ATM machine
+
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static int balance;
+    static boolean flag=true;
+    public static void main(String args[]) {
+        while (flag){    //loop gone untill the flag is set to false in the exit method.
+            Scanner input = new Scanner(System.in);
+            System.out.println("Automated teller machine");
+            System.out.println("Choose 1 for Widhraw");
+            System.out.println("Choose 2 for Deposit");
+            System.out.println("Choose 3 for Check Balance");
+            System.out.println("Choose 4 for Exit");
+            int code = input.nextInt();
+
+            switch (code){
+                case 1:
+                    widhrawAmount();
+                    break;
+                case 2:
+                    depositAmount();
+                    break;
+                case 3:
+                    checkbalance();
+                    break;
+                default:
+                    System.out.println("thanks for using");
+                    break;
+            }
+        exit();
+
+        }
+        }
+
+    public static void widhrawAmount(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter the amount to be widhrawed :");
+        int widhrawAmount=input.nextInt();
+        if(balance>widhrawAmount){
+            balance-=widhrawAmount;
+            System.out.println(widhrawAmount + "$ has been widhrawed");
+        }else {
+            System.out.println("sorry you don't have enough balance");
+        }
+    }
+    public static void depositAmount(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter the amount to be added :");
+        int depositAmount=input.nextInt();
+        balance+=depositAmount;
+        System.out.println(depositAmount+ "$ has been added");
+    }
+    public static void checkbalance(){
+        System.out.println("your balance is $"+balance);
+    }
+
+    public static void exit(){
+        System.out.println("press 1 for continue");
+        System.out.println("press 0 to exit");
+        Scanner input=new Scanner(System.in);
+        int num=input.nextInt();
+        if (num==1){
+            flag=true;
+        }else if(num==0){
+            flag=false;
+        }
+    }
+}
+____________________________________________________________________________________________________________________________________________________________________________
