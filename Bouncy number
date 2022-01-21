@@ -1,0 +1,57 @@
+        //Bouncy number (_  not 100% correct)
+        
+        //For example, 123742, 101, 43682, etc. We observe that in the given number's digits are neither increasing nor decreasing if we traverse from left to right, hence they are called bouncy numbers.
+        
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static boolean isIncreasing=false;
+    static boolean isDecreasing=false;
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter the number");  //get input
+        int number=input.nextInt();
+        isIncreasing(number);
+
+        if(isIncreasing==true && isDecreasing==true){
+            System.out.println("it is an bouncy number");
+        }else{
+            System.out.println("it is not an bouncy number");
+        }
+    }
+
+    public static void isIncreasing(int number){
+        int temp=number;
+        int lastDigit=temp%10;
+
+        while (temp>0){
+            int previousDigit=temp%10;
+            if(lastDigit>=previousDigit){     //atleast one bounce occur it changes to true
+                isIncreasing=true;
+            }else{
+                isDecreasing(number,temp);
+                break;                      //elase it calls the other function with the remaining value as number
+            }
+            lastDigit=previousDigit;
+            temp/=10;
+        }
+    }
+
+    public static void isDecreasing(int number,int temp){
+
+        int lastDigit=temp%10;
+        
+        while (temp>0){
+            int previousDigit=temp%10;
+            if(lastDigit>=previousDigit){
+                isDecreasing=true;
+            }else {
+                isDecreasing=false;
+            }
+            lastDigit=previousDigit;
+            temp/=10;
+        }
+    }
+}
+
+_______________________________________________________________________________________________________________________________________________________________________
