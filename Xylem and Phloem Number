@@ -1,0 +1,54 @@
+      //Xylem and Phloem Number
+      //A number N will be a xylem number if the sum of its extreme (first and last) digits is equal to the sum of mean (all digits except first and last) digits. If the sum of extreme digits is not equal to the sum of mean digits, the number is called phloem number.
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static int primeSum=0;
+
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int number=input.nextInt();
+        xylemAndPholemNumber(number);
+    }
+
+    public static void xylemAndPholemNumber(int number){
+         int temp=number;
+         int firstDigit;
+         int lastDigit;
+         int length=0;
+         int sumofExtreme=0;
+         int sumofMiddle=0;
+
+         while (temp>0){
+             length++;
+             temp/=10;
+         }
+         temp=number;
+
+         lastDigit=temp%10;
+         int divisor=(int)Math.pow(10,length-1);
+         firstDigit=temp/divisor;
+
+         sumofExtreme=firstDigit+lastDigit;
+         
+         //to remove first and last digits from temp
+          temp%=divisor;
+          temp/=10;
+
+          while (temp>0){
+              lastDigit=temp%10;
+              sumofMiddle+=lastDigit;
+              temp/=10;
+          }
+
+          if(sumofExtreme==sumofMiddle){
+              System.out.println("it is an XYLEM number");
+          }else{
+              System.out.println("it is an PHOLEM number");
+          }
+
+    }
+}
+________________________________________________________________________________________________________________________________________________________________________
