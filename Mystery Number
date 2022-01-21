@@ -1,0 +1,36 @@
+      //Mystery Number
+      //11 ( 9+3) = 132 = 93+39
+      //11 (6 + 8) = 154 = 68 + 86
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static boolean isIncreasing=false;
+    static boolean isDecreasing=false;
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int number=input.nextInt();
+        mysteryNumber(number);
+    }
+
+    public static void mysteryNumber(int number){
+        int divBy11=number/11;    //to elimitate teh 11* multiply factor
+        int reversedNum;
+
+        int tempdiv=divBy11;
+
+        for (int i=0;i<=divBy11;i++){
+            int value=tempdiv-i;    //all posibility of num gives same value of addition of two digits
+            if(tempdiv * 10 + i == tempdiv + i * 10){   //reverse them 
+                System.out.println("it is an mystery number");
+                break;
+            }else{
+                System.out.println("it is not an mystery number");
+                tempdiv--;
+            }
+        }
+    }
+}
+
+____________________________________________________________________________________________________________________________________________________________________________
