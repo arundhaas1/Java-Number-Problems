@@ -1,0 +1,38 @@
+        //Strontio Number
+        //
+        
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static int primeSum=0;
+
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int number=input.nextInt();
+        strontioNumber(number);
+    }
+
+    public static void strontioNumber(int number){
+         int temp=number*2;
+         temp=temp/10;
+         int thirdDigit=temp%10;
+         temp=temp/10;
+         int secondDigit=temp%10;
+
+
+        System.out.println(secondDigit);
+        System.out.println(thirdDigit);
+         if(temp<=9999 && number<=9999){
+             if(secondDigit==thirdDigit){
+                 System.out.println("it is an strontio  number");
+             }else{
+                 System.out.println("it is not an strontio  number");
+             }
+         }else{
+             System.out.println("it is not an strontio  number");
+         }
+    }
+}
+
+______________________________________________________________________________________________________________________________________________________________________
