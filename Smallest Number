@@ -1,0 +1,22 @@
+          //Smallest number using Ternary Operator
+          
+          //variable_name = (expression) ? value if true:value if false  
+          
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number1 ");
+        int number1 = input.nextInt();
+        System.out.print("Enter number2 ");
+        int number2 = input.nextInt();
+
+        //ternary operator
+
+        int number=number1<number2?number1:number2;
+        System.out.println("the smallest number is "+number);
+
+    }
+}
+______________________________________________________________________________________________________________________________________________________________________________
