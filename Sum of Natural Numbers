@@ -1,0 +1,22 @@
+      //Sum of Natural Numbers
+      //The natural numbers are the numbers that include all the positive integers from 1 to infinity. For example, 1, 2, 3, 4, 5, ......, n
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number1 ");
+        int number = input.nextInt();
+        naturalNumber(number);
+    }
+
+    public static void naturalNumber(int number){
+        int sum=0;
+        for (int i=1;i<=number;i++){
+            sum+=i;
+        }
+        System.out.println("sum of the "+number+" natural number is "+sum);
+    }
+}
+_______________________________________________________________________________________________________________________________________________________________________
