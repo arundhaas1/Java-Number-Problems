@@ -1,0 +1,41 @@
+      //odd and even number
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number1 ");
+        int number = input.nextInt();
+        naturalNumber(number);
+    }
+
+    public static void naturalNumber(int number){
+        for (int i=1;i<=number;i++ ){
+            if(i%2==0){
+                System.out.println(i);  //even number
+            }
+        }
+    }
+}
+
+__________________________________________________________________________________________________________________________________________________________________________________
+
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number1 ");
+        int number = input.nextInt();
+        naturalNumber(number);
+    }
+
+    public static void naturalNumber(int number){
+        for (int i=1;i<=number;i++ ){
+            if(i%2!=0){
+                System.out.println(i);  //odd number
+            }
+        }
+    }
+}
