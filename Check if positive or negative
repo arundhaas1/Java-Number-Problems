@@ -1,0 +1,7 @@
+      //Check if positive or negative
+      
+      Using Relational Operator (number>0?positive:negative)
+      
+      Using Math.signum() Method (result=Math.signum(number))
+      
+      Using Integer.signum() Method (result=Integer.signum(number))
