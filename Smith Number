@@ -1,0 +1,64 @@
+      //Smith Number
+      //Suppose, we want to check the number 85 is smith or not . Sum of digits = 8 + 5 = 13.Prime factors of 85 is: 5,17 . Sum of digits of its prime factors = 5 + 1+ 7 = 13
+      
+package com.dhas;
+import java.util.Scanner;
+public  class Main {
+    static int primeSum=0;
+
+    public static void main(String args[]) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter the number");
+        int number=input.nextInt();
+        smithNumber(number);
+    }
+
+    public static void smithNumber(int number){
+        int temp=number;
+        int lastDigit;
+        int sum=0;     //value of the sum of digits
+        while (temp>0){
+            lastDigit=temp%10;
+            sum+=lastDigit;
+            temp/=10;
+        }
+        temp=number;
+
+        //get prime factors
+
+
+        for (int i=2;i<temp;i++){
+            while (temp%i==0){
+                if(i>10){
+                    int prime=i;
+                    while (prime>0){
+                        lastDigit=i%10;
+                        primeSum+=lastDigit;
+                        prime/=10;
+                    }
+                }else{
+                    primeSum+=i;
+                }
+                temp/=i;
+            }
+        }
+
+        if(temp!=1){
+            if(temp>0){
+                while (temp>0){
+                    lastDigit=temp%10;
+                    primeSum=primeSum+lastDigit;
+                    temp/=10;
+                }
+            }
+        }
+
+        if (sum == primeSum) {
+            System.out.println("it is an smith number");
+        }else{
+            System.out.println("it is not an smith number");
+        }
+
+    }
+}
+_______________________________________________________________________________________________________________________________________________________________________
